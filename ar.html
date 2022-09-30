@@ -4,11 +4,11 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="content-security-policy" content=""><script src="https://aframe.io/releases/1.0.4/aframe.min.js" data-svelte="svelte-wct80w"></script><script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" data-svelte="svelte-wct80w"></script><script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js" data-svelte="svelte-wct80w"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js" data-svelte="svelte-wct80w"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js" data-svelte="svelte-wct80w"></script>
-	<link rel="modulepreload" href="/_app/immutable/start-1680b524.js">
+		<meta http-equiv="content-security-policy" content=""><script src="https://aframe.io/releases/1.0.4/aframe.min.js" type="text/javascript" data-svelte="svelte-co0ft3"></script><script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" type="text/javascript" data-svelte="svelte-co0ft3"></script><script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js" type="text/javascript" data-svelte="svelte-co0ft3"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js" type="text/javascript" data-svelte="svelte-co0ft3"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js" type="text/javascript" data-svelte="svelte-co0ft3"></script>
+	<link rel="modulepreload" href="/_app/immutable/start-2f635664.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-3fa99519.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-36fdb376.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/ar.svelte-3437d768.js">
+	<link rel="modulepreload" href="/_app/immutable/layout.svelte-8eabb34f.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/ar.svelte-0c192591.js">
 	</head>
 	<body>
 		<div>
@@ -18,18 +18,18 @@
 
 <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector><a-assets><a-asset-item id="animated-asset" src="assets/asset.gltf"></a-asset-item></a-assets>
 
-	<a-marker id="animated-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"><a-entity id="bowser-model" scale="1.3275364644496295 1.3275364644496295 1.3275364644496295" animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable" gesture-handler></a-entity></a-marker>
+    <a-marker id="animated-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"><a-entity id="bowser-model" scale="1.3275364644496295 1.3275364644496295 1.3275364644496295" animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable" gesture-handler></a-entity></a-marker>
 
-	<a-entity camera></a-entity></a-scene>
+    <a-entity camera></a-entity></a-scene>
 
 
-		<script type="module" data-sveltekit-hydrate="1lx1cxs">
-		import { set_public_env, start } from "/_app/immutable/start-1680b524.js";
+		<script type="module" data-sveltekit-hydrate="1gloio">
+		import { set_public_env, start } from "/_app/immutable/start-2f635664.js";
 
 		set_public_env({});
 
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1lx1cxs"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1gloio"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
