@@ -1,57 +1,51 @@
-<!DOCTYPE html>
-<html data-theme="cupcake" lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="content-security-policy" content=""><script src="https://aframe.io/releases/1.0.4/aframe.min.js" type="text/javascript" data-svelte="svelte-j3ies0"></script><script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" type="text/javascript" data-svelte="svelte-j3ies0"></script><script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js" type="text/javascript" data-svelte="svelte-j3ies0"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js" type="text/javascript" data-svelte="svelte-j3ies0"></script><script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js" type="text/javascript" data-svelte="svelte-j3ies0"></script>
-	<link rel="modulepreload" href="/_app/immutable/start-a2a5f1f4.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-d53b1594.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-df816a4e.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/ar.svelte-dd9bfc60.js">
-	</head>
-	<body>
-		<div>
+<!doctype html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    </head>
 
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/asset.gltf"
+                ></a-asset-item>
+            </a-assets>
 
-<div class="navbar bg-base-100"><div class="navbar-start"><div class="dropdown">
-		<label tabindex="0" class="btn btn-ghost lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></label>
-		<ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"><li><a href="/posts/summary">Posts</a></li>
-		  <li><a href="/ar">AR Mode</a></li></ul></div>
-	  <a href="/" class="btn btn-ghost normal-case text-xl">HOME</a></div>
-	<div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal p-0"><li><a href="/posts/summary">Posts</a></li>
-		<li><a href="/ar">AR Mode</a></li></ul></div></div>
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="1.3275364644496295 1.3275364644496295 1.3275364644496295"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
 
-
-<a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector><a-assets><a-asset-item id="animated-asset" src="assets/asset.gltf"></a-asset-item></a-assets>
-
-	<a-marker id="animated-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"><a-entity id="bowser-model" scale="1.3275364644496295 1.3275364644496295 1.3275364644496295" animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable" gesture-handler></a-entity></a-marker>
-
-	<a-entity camera></a-entity></a-scene>
-
-
-		<script type="module" data-sveltekit-hydrate="16mcta8">
-		import { set_public_env, start } from "/_app/immutable/start-a2a5f1f4.js";
-
-		set_public_env({});
-
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="16mcta8"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				nodes: [0, 2],
-				params: {},
-				routeId: "ar"
-			}
-		});
-	</script></div>
-	</body>
-
-	
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
 </html>
